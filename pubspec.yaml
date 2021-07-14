@@ -57,6 +57,7 @@ flutter:
     - assets/images/tabBar/tab_train_select.png
     - assets/images/tabBar/tab_match_select.png
     - assets/images/tabBar/tab_my_select.png
+    - assets/images/ding.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
