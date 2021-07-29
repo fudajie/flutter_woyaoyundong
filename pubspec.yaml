@@ -57,7 +57,23 @@ flutter:
     - assets/images/tabBar/tab_train_select.png
     - assets/images/tabBar/tab_match_select.png
     - assets/images/tabBar/tab_my_select.png
+
+    - assets/images/my/china_mobile.png
+    - assets/images/my/event_bg.png
+    - assets/images/my/foot.png
+    - assets/images/my/kefu.png
+    - assets/images/my/mycard.png
+    - assets/images/my/oder.png
+    - assets/images/my/self.png
+    - assets/images/my/setting.png
+    - assets/images/my/train.png
+
     - assets/images/ding.png
+    - assets/images/crown.png
+    - assets/images/logo.png
+    - assets/images/test.png
+    - assets/images/vip_tag.png
+    - assets/images/arrow_white.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
