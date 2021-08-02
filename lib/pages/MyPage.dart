@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_woyaoyundong/components/help/OverScrollBehavior.dart';
 import 'package:flutter_woyaoyundong/res/YColors.dart';
 
 class MyPage extends StatefulWidget {
@@ -57,7 +58,7 @@ class _MyPage extends State<MyPage> {
                       child: Text('个人中心',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 18,
+                            fontSize: 21,
                           ))),
                   Container(
                     width: 25,
@@ -73,41 +74,39 @@ class _MyPage extends State<MyPage> {
               ),
               Container(
                 color: YColors.colorPrimary,
-                height: 100,
+                height: 112,
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Container(
-                      width: 59.5,
-                      height: 62.5,
-                      margin: const EdgeInsets.only(left: 15, right: 12),
+                      width: 69,
+                      height: 72,
+                      margin: const EdgeInsets.only(left: 15, right: 14),
                       child: Stack(
                           textDirection: TextDirection.ltr,
                           alignment: Alignment.topLeft,
                           children: <Widget>[
-                            Positioned(
+                            Container(
                               child: Image(
                                 image: AssetImage('assets/images/test.png'),
-                                width: 50,
-                                height: 50,
-                              ),
-                              width: 50,
-                              height: 50,
-                              top: 12.5,
-                              left: 9.5,
-                            ),
-                            Positioned(
-                              child: Image(
-                                image: AssetImage('assets/images/crown.png'),
-                                width: 33,
-                                height: 27.5,
+                                width: 58,
+                                height: 58,
                                 fit: BoxFit.fill,
                               ),
+                              width: 58,
+                              height: 58,
+                              margin: const EdgeInsets.only(top: 14, left: 11),
+                            ),
+                            Image(
+                              image: AssetImage('assets/images/crown.png'),
+                              width: 38,
+                              height: 32,
+                              fit: BoxFit.fill,
                             ),
                           ]),
                     ),
                     Container(
-                      margin: const EdgeInsets.only(top: 15.5),
+                      margin: const EdgeInsets.only(top: 18),
                       height: 44,
                       child: Column(
                           mainAxisSize: MainAxisSize.min,
@@ -118,7 +117,7 @@ class _MyPage extends State<MyPage> {
                               '大洁洁洁',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 16,
                               ),
                             ),
                             Text(
@@ -132,7 +131,7 @@ class _MyPage extends State<MyPage> {
                     ),
                     Spacer(),
                     Container(
-                      margin: const EdgeInsets.only(top: 14.5, right: 15),
+                      margin: const EdgeInsets.only(top: 17, right: 15),
                       alignment: Alignment.center,
                       height: 44,
                       child: Column(
@@ -143,14 +142,14 @@ class _MyPage extends State<MyPage> {
                               '0.00',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15,
+                                fontSize: 17,
                               ),
                             ),
                             Text(
                               '账户余额',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 15,
+                                fontSize: 17,
                               ),
                             ),
                           ]),
@@ -160,16 +159,16 @@ class _MyPage extends State<MyPage> {
               ),
               Container(
                 color: YColors.colorPrimary,
-                height: 38,
+                height: 44,
                 child: Container(
                   margin: EdgeInsets.only(right: 15, left: 15),
-                  padding: EdgeInsets.only(right: 6.5, left: 12),
+                  padding: EdgeInsets.only(right: 7, left: 14),
                   //边框设置
                   decoration: new BoxDecoration(
                     color: YColors.black,
                     borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(25),
-                        topRight: Radius.circular(25)),
+                        topLeft: Radius.circular(29),
+                        topRight: Radius.circular(29)),
                     border: new Border.all(width: 1, color: Colors.black),
                   ),
                   child: Row(
@@ -177,8 +176,8 @@ class _MyPage extends State<MyPage> {
                     children: [
                       Image(
                         image: AssetImage('assets/images/vip_tag.png'),
-                        width: 17,
-                        height: 12.5,
+                        width: 20,
+                        height: 14,
                       ),
                       Expanded(
                         //Expanded包含的组件可以占据剩余的空间
@@ -187,16 +186,16 @@ class _MyPage extends State<MyPage> {
                           overflow: TextOverflow.ellipsis,
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 14,
+                            fontSize: 16,
                           ),
                         ),
                       ),
                       Container(
-                        width: 74.5,
-                        height: 24,
+                        width: 86,
+                        height: 28,
                         decoration: new BoxDecoration(
                           color: YColors.c_ff6600,
-                          borderRadius: BorderRadius.all(Radius.circular(12)),
+                          borderRadius: BorderRadius.all(Radius.circular(14)),
                           border:
                               new Border.all(width: 1, color: YColors.c_ff6600),
                         ),
@@ -207,7 +206,7 @@ class _MyPage extends State<MyPage> {
                               '我的会员',
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 16,
                                 fontWeight: FontWeight.w500,
                                 height: 1.1, // 1.1更居中
                               ),
@@ -215,8 +214,8 @@ class _MyPage extends State<MyPage> {
                             Image(
                               image:
                                   AssetImage('assets/images/arrow_white.png'),
-                              width: 6,
-                              height: 10,
+                              width: 7,
+                              height: 12,
                             ),
                           ],
                         ),
@@ -231,10 +230,10 @@ class _MyPage extends State<MyPage> {
                 child: Column(
                   children: [
                     Container(
-                      height: 79,
+                      height: 91,
                       width: double.infinity,
-                      margin: EdgeInsets.fromLTRB(15, 22, 15, 10.5),
-                      padding: EdgeInsets.fromLTRB(10.5, 13.5, 10, 12.5),
+                      margin: EdgeInsets.fromLTRB(15, 25, 15, 12),
+                      padding: EdgeInsets.fromLTRB(12, 16, 10, 12),
                       decoration: new BoxDecoration(
                         color: YColors.black,
                         borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -250,17 +249,18 @@ class _MyPage extends State<MyPage> {
                                 "我要运动VIP",
                                 style: TextStyle(
                                   color: Colors.white,
-                                  fontSize: 18,
+                                  fontSize: 21,
                                   fontWeight: FontWeight.w500,
                                 ),
                               ),
                               Container(
-                                  width: 85,
-                                  height: 24,
+                                  width: 98,
+                                  height: 28,
+                                  alignment: Alignment.center,
                                   decoration: new BoxDecoration(
                                     color: YColors.c_ff6600,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(4)),
+                                        BorderRadius.all(Radius.circular(5)),
                                     border: new Border.all(
                                         width: 1, color: YColors.c_ff6600),
                                   ),
@@ -269,7 +269,8 @@ class _MyPage extends State<MyPage> {
                                     textAlign: TextAlign.center,
                                     style: TextStyle(
                                       color: Colors.white,
-                                      fontSize: 14,
+                                      fontSize: 16,
+                                      height: 1.1,
                                     ),
                                   ))
                             ],
@@ -292,14 +293,16 @@ class _MyPage extends State<MyPage> {
                 ),
               ),
               Container(
-                height: 288,
-                color: Colors.white,
-                padding: EdgeInsets.only(left: 13.5),
-                child: ListView(
-                  padding: EdgeInsets.only(top: 0),
-                  children: _buildList(),
-                ),
-              ),
+                  height: 342,
+                  color: Colors.white,
+                  padding: EdgeInsets.only(left: 13.5),
+                  child: ScrollConfiguration(
+                    behavior: OverScrollBehavior(),
+                    child: ListView(
+                      padding: EdgeInsets.only(top: 0),
+                      children: _buildList(),
+                    ),
+                  )),
             ],
           ),
         ),
@@ -314,23 +317,42 @@ class _MyPage extends State<MyPage> {
   }
 
   Widget _item(String key) {
-    return Container(
-      height: 32,
-      alignment: Alignment.center,
-      decoration: new BoxDecoration(
-        border:
-            new Border(bottom: BorderSide(width: 1, color: Color(0xffe5e5e5))),
-      ),
-      child: Row(
-        children: [
-          Image(
-            image: AssetImage(maps[key]),
-            width: 20,
-            height: 20,
-          ),
-          Text(key),
-          Image(image: AssetImage(maps[key])),
-        ],
+    return GestureDetector(
+      onTap: () {
+        print(key);
+      },
+      child: Container(
+        height: 38,
+        alignment: Alignment.center,
+        decoration: new BoxDecoration(
+          border: new Border(
+              bottom: BorderSide(width: 1, color: Color(0xffe5e5e5))),
+        ),
+        child: Row(
+          children: [
+            Container(
+              margin: EdgeInsets.only(right: 10),
+              child: Image(
+                image: AssetImage(maps[key]),
+                width: 23,
+                fit: BoxFit.fitWidth,
+              ),
+            ),
+            Expanded(
+              child: Text(
+                key,
+                style: TextStyle(
+                  color: YColors.black,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+            Container(
+              margin: EdgeInsets.only(right: 15),
+              child: Image(image: AssetImage("assets/images/arror_gray.png")),
+            )
+          ],
+        ),
       ),
     );
   }
