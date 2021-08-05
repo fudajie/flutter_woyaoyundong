@@ -3,6 +3,7 @@ import 'package:flutter_woyaoyundong/pages/HomePage.dart';
 import 'package:flutter_woyaoyundong/pages/MyPage.dart';
 import 'package:flutter_woyaoyundong/pages/MatchPage.dart';
 import 'package:flutter_woyaoyundong/pages/TrainPage.dart';
+import 'package:flutter_woyaoyundong/res/YColors.dart';
 
 import 'NavigationIconView.dart';
 
@@ -18,23 +19,26 @@ class _TabNavigatorState extends State<TabNavigator> {
   final _defaultColor = Colors.grey;
   final _activeColor = Colors.red;
 
-  List<NavigationIconView> _navigationIconView;
+  List<NavigationIconView>? _navigationIconView;
 
+  // ignore: non_constant_identifier_names
   List bottom_titles = ['场馆', "培训", "赛事", "我的"];
+
+  // ignore: non_constant_identifier_names
   List bottom_icons = [
     'assets/images/tabBar/tab_stadium.png',
     "assets/images/tabBar/tab_train.png",
     "assets/images/tabBar/tab_match.png",
     "assets/images/tabBar/tab_my.png",
   ];
+
+  // ignore: non_constant_identifier_names
   List bottom_select_icons = [
     'assets/images/tabBar/tab_stadium_select.png',
     "assets/images/tabBar/tab_train_select.png",
     "assets/images/tabBar/tab_match_select.png",
     "assets/images/tabBar/tab_my_select.png",
   ];
-
-
 
   @override
   void initState() {
@@ -62,6 +66,7 @@ class _TabNavigatorState extends State<TabNavigator> {
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _currentIndex,
+        selectedItemColor: YColors.colorPrimary,
         onTap: (index) {
           _controller.jumpToPage(index);
           setState(() {
@@ -69,7 +74,7 @@ class _TabNavigatorState extends State<TabNavigator> {
           });
         },
         type: BottomNavigationBarType.fixed,
-        items: _navigationIconView.map((view) => view.item).toList(),
+        items: _navigationIconView!.map((view) => view.item).toList(),
       ),
     );
   }

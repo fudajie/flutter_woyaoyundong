@@ -1,6 +1,8 @@
+import 'package:flustars/flustars.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_woyaoyundong/components/help/OverScrollBehavior.dart';
+import 'package:flutter_woyaoyundong/manager/UserManager.dart';
 import 'package:flutter_woyaoyundong/res/YColors.dart';
 
 class MyPage extends StatefulWidget {
@@ -107,7 +109,7 @@ class _MyPage extends State<MyPage> {
                     ),
                     Container(
                       margin: const EdgeInsets.only(top: 18),
-                      height: 44,
+                      height: 50,
                       child: Column(
                           mainAxisSize: MainAxisSize.min,
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -133,7 +135,7 @@ class _MyPage extends State<MyPage> {
                     Container(
                       margin: const EdgeInsets.only(top: 17, right: 15),
                       alignment: Alignment.center,
-                      height: 44,
+                      height: 53,
                       child: Column(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           crossAxisAlignment: CrossAxisAlignment.center,
@@ -197,7 +199,7 @@ class _MyPage extends State<MyPage> {
                           color: YColors.c_ff6600,
                           borderRadius: BorderRadius.all(Radius.circular(14)),
                           border:
-                              new Border.all(width: 1, color: YColors.c_ff6600),
+                          new Border.all(width: 1, color: YColors.c_ff6600),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -213,7 +215,7 @@ class _MyPage extends State<MyPage> {
                             ),
                             Image(
                               image:
-                                  AssetImage('assets/images/arrow_white.png'),
+                              AssetImage('assets/images/arrow_white.png'),
                               width: 7,
                               height: 12,
                             ),
@@ -233,7 +235,7 @@ class _MyPage extends State<MyPage> {
                       height: 91,
                       width: double.infinity,
                       margin: EdgeInsets.fromLTRB(15, 25, 15, 12),
-                      padding: EdgeInsets.fromLTRB(12, 16, 10, 12),
+                      padding: EdgeInsets.fromLTRB(12, 16, 10, 0),
                       decoration: new BoxDecoration(
                         color: YColors.black,
                         borderRadius: BorderRadius.all(Radius.circular(4)),
@@ -260,7 +262,7 @@ class _MyPage extends State<MyPage> {
                                   decoration: new BoxDecoration(
                                     color: YColors.c_ff6600,
                                     borderRadius:
-                                        BorderRadius.all(Radius.circular(5)),
+                                    BorderRadius.all(Radius.circular(5)),
                                     border: new Border.all(
                                         width: 1, color: YColors.c_ff6600),
                                   ),
@@ -276,13 +278,13 @@ class _MyPage extends State<MyPage> {
                             ],
                           ),
                           Container(
-                            margin: EdgeInsets.only(top: 8),
+                            margin: EdgeInsets.only(top: 9),
                             child: Text(
                               "享专属订场通道、退订无忧、专属优惠券等多种会员特权 ",
                               overflow: TextOverflow.ellipsis,
                               style: TextStyle(
                                 color: Colors.white,
-                                fontSize: 14,
+                                fontSize: 16,
                               ),
                             ),
                           )
@@ -300,6 +302,7 @@ class _MyPage extends State<MyPage> {
                     behavior: OverScrollBehavior(),
                     child: ListView(
                       padding: EdgeInsets.only(top: 0),
+                      physics: NeverScrollableScrollPhysics(),
                       children: _buildList(),
                     ),
                   )),
@@ -320,6 +323,11 @@ class _MyPage extends State<MyPage> {
     return GestureDetector(
       onTap: () {
         print(key);
+        if (UserManager.getInstance.isLogin()) {
+          LogUtil.e("已登录~");
+        } else {
+          LogUtil.e("未登录~");
+        }
       },
       child: Container(
         height: 38,

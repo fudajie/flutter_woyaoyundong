@@ -10,9 +10,9 @@ class NavigationIconView {
   final String activedIconPath;
 
   NavigationIconView(
-      {@required this.title,
-        @required this.icon,
-        @required this.activedIconPath})
+      {required this.title,
+        required this.icon,
+        required this.activedIconPath})
       : item = BottomNavigationBarItem(
     //默认图标
       icon: Image.asset(
