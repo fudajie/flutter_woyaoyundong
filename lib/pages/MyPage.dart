@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_woyaoyundong/components/help/OverScrollBehavior.dart';
 import 'package:flutter_woyaoyundong/manager/UserManager.dart';
+import 'package:flutter_woyaoyundong/pages/LoginPage.dart';
 import 'package:flutter_woyaoyundong/res/YColors.dart';
 
 class MyPage extends StatefulWidget {
@@ -199,7 +200,7 @@ class _MyPage extends State<MyPage> {
                           color: YColors.c_ff6600,
                           borderRadius: BorderRadius.all(Radius.circular(14)),
                           border:
-                          new Border.all(width: 1, color: YColors.c_ff6600),
+                              new Border.all(width: 1, color: YColors.c_ff6600),
                         ),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -215,7 +216,7 @@ class _MyPage extends State<MyPage> {
                             ),
                             Image(
                               image:
-                              AssetImage('assets/images/arrow_white.png'),
+                                  AssetImage('assets/images/arrow_white.png'),
                               width: 7,
                               height: 12,
                             ),
@@ -262,7 +263,7 @@ class _MyPage extends State<MyPage> {
                                   decoration: new BoxDecoration(
                                     color: YColors.c_ff6600,
                                     borderRadius:
-                                    BorderRadius.all(Radius.circular(5)),
+                                        BorderRadius.all(Radius.circular(5)),
                                     border: new Border.all(
                                         width: 1, color: YColors.c_ff6600),
                                   ),
@@ -326,15 +327,16 @@ class _MyPage extends State<MyPage> {
         if (UserManager.getInstance.isLogin()) {
           LogUtil.e("已登录~");
         } else {
-          LogUtil.e("未登录~");
+          Navigator.push(context, CupertinoPageRoute(builder: (context){
+            return new LoginPage();
+          }));
         }
       },
       child: Container(
         height: 38,
         alignment: Alignment.center,
         decoration: new BoxDecoration(
-          border: new Border(
-              bottom: BorderSide(width: 1, color: Color(0xffe5e5e5))),
+          border: new Border(bottom: BorderSide(width: 1, color: YColors.c_e5)),
         ),
         child: Row(
           children: [
